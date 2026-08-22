@@ -1,0 +1,11 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="wgrad" x1="10%" y1="90%" x2="90%" y2="10%">
+      <stop offset="0%" stop-color="#1e3a8a"/>
+      <stop offset="55%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+  </defs>
+  <path d="M20 40 L58 155 L100 75 L142 155 L178 40 L150 40 L128 105 L100 50 L72 105 L50 40 Z" fill="url(#wgrad)"/>
+  <path d="M150 78 L178 40 L136 48 L152 58 Z" fill="#38bdf8"/>
+</svg>

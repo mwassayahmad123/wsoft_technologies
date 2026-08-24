@@ -91,52 +91,53 @@ export const team = [
   {
     name: "Hassan Rasool",
     role: "Full-Stack Developer | Automation Enthusiast",
-    image: "/team/hassan-rasool.jpg",
+    image: "/team/hassan.jpeg",
   },
   {
     name: "Talha Khan",
     role: "AI Engineer",
-    image: "/team/talha-khan.jpg",
-  },
-  {
-    name: "Usman Chaudhary",
-    role: "SEO Specialist",
-    image: "/team/usman-chaudhary.jpg",
+    image: "/team/talha.png",
   },
   {
     name: "Zoha Riaz Qureshi",
     role: "Human Resource | People & Culture Specialist",
-    image: "/team/zoha-riaz-qureshi.jpg",
+    image: "/team/zoha.jpeg",
   },
+  {
+    name: "Usman Chaudhary",
+    role: "SEO Specialist",
+    image: "/team/usman.jpg",
+  },
+  
   {
     name: "Muhammad Rehan",
     role: "Game Developer",
-    image: "/team/muhammad-rehan.jpg",
+    image: "/team/rayyan.png",
   },
   {
     name: "Shaheer Chaudhary",
     role: "Social Media Manager",
-    image: "/team/shaheer-chaudhary.jpg",
+    image: "/team/shaheer.png",
   },
   {
     name: "Sadaf Javed Awan",
-    role: "HR & Social Media Manager",
+    role: "Social Media Manager",
     image: "/team/sadaf-javed-awan.jpg",
   },
   {
     name: "Tayyab Zafar",
     role: "SEO Intern",
-    image: "/team/tayyab-zafar.jpg",
+    image: "/team/tayyab.png",
   },
   {
     name: "Izza Yousaf",
     role: "SEO Intern",
-    image: "/team/izza-yousaf.jpg",
+    image: "/team/izza_2.jpeg",
   },
   {
     name: "Alamdar Abbas",
     role: "SEO Intern",
-    image: "/team/alamdar-abbas.jpg",
+    image: "/team/alamdar.jpeg",
   },
 ];
 

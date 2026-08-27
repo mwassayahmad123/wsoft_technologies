@@ -132,7 +132,7 @@ export const team = [
   {
     name: "Izza Yousaf",
     role: "SEO Intern",
-    image: "/team/izza_2.jpeg",
+    image: "/team/izza.jpg",
   },
   {
     name: "Alamdar Abbas",

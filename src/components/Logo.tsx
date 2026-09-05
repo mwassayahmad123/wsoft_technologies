@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Logo({ dark = false }: { dark?: boolean }) {
   return (
-    <Link href="#home" className="flex items-center gap-2.5 shrink-0">
+    <Link href="/" className="flex items-center gap-2.5 shrink-0">
       <Image
         src="/logo-icon.png"
         alt="Wsoft Technologies"

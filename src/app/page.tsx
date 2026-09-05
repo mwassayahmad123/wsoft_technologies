@@ -1,5 +1,6 @@
 import Hero from "@/components/Hero";
 import Stats from "@/components/Stats";
+import AIApproach from "@/components/AIApproach";
 import Services from "@/components/Services";
 import Approach from "@/components/Approach";
 import Team from "@/components/Team";
@@ -11,6 +12,7 @@ export default function Home() {
     <>
       <Hero />
       <Stats />
+      <AIApproach />
       <Services />
       <Approach />
       <Team />

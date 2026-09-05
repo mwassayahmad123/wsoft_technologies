@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import Logo from "./Logo";
 import { navLinks } from "@/data/content";
 
@@ -23,12 +24,12 @@ export default function Navbar() {
             </a>
           ))}
         </div>
-        <a
-          href="#contact"
+        <Link
+          href="/#contact"
           className="hidden rounded-full bg-slate-900 px-7 py-3 text-base font-semibold text-white shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:bg-sky-600 hover:shadow-lg hover:shadow-sky-500/30 md:inline-block"
         >
           Start a Project
-        </a>
+        </Link>
         <button
           onClick={() => setOpen(!open)}
           className="inline-flex flex-col gap-1.5 md:hidden"
@@ -52,13 +53,13 @@ export default function Navbar() {
                 {link.label}
               </a>
             ))}
-            <a
-              href="#contact"
+            <Link
+              href="/#contact"
               onClick={() => setOpen(false)}
               className="mt-2 rounded-full bg-slate-900 px-5 py-3 text-center text-base font-semibold text-white transition-colors duration-300 hover:bg-sky-600"
             >
               Start a Project
-            </a>
+            </Link>
           </div>
         </div>
       )}

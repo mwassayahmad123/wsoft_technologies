@@ -1,6 +1,11 @@
-import { services } from "@/data/content";
+import { services, coreServiceTitles } from "@/data/content";
+import ServiceCard from "./ServiceCard";
 
 export default function Services() {
+  const coreServices = coreServiceTitles
+    .map((title) => services.find((s) => s.title === title))
+    .filter((s): s is (typeof services)[number] => Boolean(s));
+
   return (
     <section id="services" className="bg-white py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -18,40 +23,32 @@ export default function Services() {
         </div>
 
         <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {services.map((service) => (
-            <div
+          {coreServices.map((service) => (
+            <ServiceCard
               key={service.title}
-              className="group rounded-2xl border border-slate-200 p-6 transition hover:-translate-y-1 hover:border-sky-300 hover:shadow-lg hover:shadow-sky-100"
-            >
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-sky-400 text-white">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  className="h-5 w-5"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M13 10V3L4 14h7v7l9-11h-7z"
-                  />
-                </svg>
-              </div>
-              <h3 className="mt-5 text-base font-semibold text-slate-900">
-                {service.title}
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-slate-600">
-                {service.description}
-              </p>
-              <a
-                href="#contact"
-                className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-sky-600 opacity-0 transition group-hover:opacity-100"
-              >
-                Learn more →
-              </a>
-            </div>
+              title={service.title}
+              description={service.description}
+              icon={service.icon}
+            />
           ))}
+        </div>
+
+        <div className="mt-12 text-center">
+          <a
+            href="/services"
+            className="inline-flex items-center gap-2 rounded-full border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-700 transition hover:border-sky-400 hover:text-sky-600"
+          >
+            View All Services
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              className="h-4 w-4"
+              stroke="currentColor"
+              strokeWidth={2}
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </a>
         </div>
       </div>
     </section>

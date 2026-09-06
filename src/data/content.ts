@@ -182,9 +182,9 @@ export const team = [
     image: "/team/zoha.jpeg",
   },
   {
-    name: "Usman Chaudhary",
+    name: "Samra",
     role: "SEO Specialist",
-    image: "/team/usman.jpg",
+    image: "#",
   },
   
   {

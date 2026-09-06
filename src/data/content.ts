@@ -193,9 +193,9 @@ export const team = [
     image: "/team/rayyan.png",
   },
   {
-    name: "Shaheer Chaudhary",
+    name: "Areesha Ameen",
     role: "Social Media Manager",
-    image: "/team/shaheer.png",
+    image: "/team/areesha.jpeg",
   },
   {
     name: "Sadaf Javed Awan",

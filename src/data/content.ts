@@ -195,7 +195,7 @@ export const team = [
   {
     name: "Areesha Ameen",
     role: "Social Media Manager",
-    image: "/team/areesha.jpeg",
+    image: "/team/Areesha.png",
   },
   {
     name: "Sadaf Javed Awan",

@@ -183,7 +183,7 @@ export const team = [
   },
   {
     name: "Samra",
-    role: "SEO Specialist",
+    role: "Social Media Manager",
     image: "#",
   },
   
@@ -193,9 +193,9 @@ export const team = [
     image: "/team/rayyan.png",
   },
   {
-    name: "Areesha Ameen",
+    name: "Areesha Amin",
     role: "Social Media Manager",
-    image: "/team/Areesha1.png",
+    image: "/team/Areesha.png",
   },
   {
     name: "Sadaf Javed Awan",

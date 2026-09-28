@@ -1,5 +1,6 @@
 import Logo from "./Logo";
-import { navLinks } from "@/data/content";
+import { contactInfo, navLinks } from "@/data/content";
+import { PhoneIcon, WhatsAppIcon } from "./ContactIcons";
 
 export default function Footer() {
   return (
@@ -27,9 +28,24 @@ export default function Footer() {
         </div>
         <div className="mt-10 flex flex-col gap-2 border-t border-white/10 pt-6 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
           <p>Copyright &copy; {new Date().getFullYear()} WSOFT Technologies Pvt Ltd.</p>
-          <a href="mailto:wsofttech26@gmail.com" className="hover:text-slate-300">
-            wsofttech26@gmail.com
-          </a>
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
+            <a href={`mailto:${contactInfo.email}`} className="hover:text-slate-300">
+              {contactInfo.email}
+            </a>
+            <a href={contactInfo.phoneHref} className="inline-flex items-center gap-1.5 hover:text-slate-300">
+              <PhoneIcon className="h-3.5 w-3.5" />
+              {contactInfo.phoneDisplay}
+            </a>
+            <a
+              href={contactInfo.whatsappHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 hover:text-[#25D366]"
+            >
+              <WhatsAppIcon className="h-3.5 w-3.5" />
+              WhatsApp
+            </a>
+          </div>
         </div>
       </div>
     </footer>

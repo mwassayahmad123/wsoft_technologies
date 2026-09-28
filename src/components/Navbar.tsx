@@ -3,7 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import Logo from "./Logo";
-import { navLinks } from "@/data/content";
+import { contactInfo, navLinks } from "@/data/content";
+import { PhoneIcon, WhatsAppIcon } from "./ContactIcons";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -60,6 +61,24 @@ export default function Navbar() {
             >
               Start a Project
             </Link>
+            <div className="mt-2 grid grid-cols-2 gap-2">
+              <a
+                href={contactInfo.phoneHref}
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-300 px-4 py-3 text-sm font-semibold text-slate-700 transition-colors hover:border-sky-400 hover:text-sky-600"
+              >
+                <PhoneIcon className="h-4 w-4" />
+                Call Us
+              </a>
+              <a
+                href={contactInfo.whatsappHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#1ebe5b]"
+              >
+                <WhatsAppIcon className="h-4 w-4" />
+                WhatsApp
+              </a>
+            </div>
           </div>
         </div>
       )}

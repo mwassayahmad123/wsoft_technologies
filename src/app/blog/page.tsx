@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { blogPosts } from "@/data/content";
 
@@ -49,8 +50,19 @@ export default function BlogPage() {
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
-                className="group flex flex-col rounded-2xl border border-slate-200 p-6 transition hover:-translate-y-1 hover:border-sky-300 hover:shadow-lg hover:shadow-sky-100"
+                className="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 transition hover:-translate-y-1 hover:border-sky-300 hover:shadow-lg hover:shadow-sky-100"
               >
+                {post.image && (
+                  <Image
+                    src={post.image}
+                    alt={post.title}
+                    width={1670}
+                    height={941}
+                    sizes="(min-width: 768px) 480px, 100vw"
+                    className="aspect-[16/9] w-full border-b border-slate-200 object-cover"
+                  />
+                )}
+                <div className="flex flex-1 flex-col p-6">
                 <div className="flex items-center gap-3 text-xs font-medium text-slate-500">
                   <span className="rounded-full bg-sky-50 px-3 py-1 font-semibold text-sky-600">
                     {post.category}
@@ -68,6 +80,7 @@ export default function BlogPage() {
                 <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-sky-600">
                   Read more →
                 </span>
+                </div>
               </Link>
             ))}
           </div>

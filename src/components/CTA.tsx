@@ -1,3 +1,6 @@
+import { contactInfo } from "@/data/content";
+import { PhoneIcon, WhatsAppIcon } from "./ContactIcons";
+
 export default function CTA() {
   return (
     <section id="contact" className="relative overflow-hidden bg-slate-950 py-24">
@@ -16,18 +19,28 @@ export default function CTA() {
           Tell us about your project and we&apos;ll get back to you within
           one business day.
         </p>
-        <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+        <div className="mt-10 flex flex-col flex-wrap items-center justify-center gap-4 sm:flex-row">
           <a
-            href="mailto:wsofttech26@gmail.com"
+            href={`mailto:${contactInfo.email}`}
             className="w-full rounded-full bg-sky-500 px-8 py-3.5 text-sm font-semibold text-white transition hover:bg-sky-400 sm:w-auto"
           >
-            wsofttech26@gmail.com
+            {contactInfo.email}
           </a>
           <a
-            href="tel:"
-            className="w-full rounded-full border border-slate-600 px-8 py-3.5 text-sm font-semibold text-slate-200 transition hover:border-slate-400 sm:w-auto"
+            href={contactInfo.phoneHref}
+            className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-slate-600 px-8 py-3.5 text-sm font-semibold text-slate-200 transition hover:border-slate-400 sm:w-auto"
           >
-            Schedule a Call
+            <PhoneIcon className="h-4 w-4" />
+            Call {contactInfo.phoneDisplay}
+          </a>
+          <a
+            href={contactInfo.whatsappHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#25D366] px-8 py-3.5 text-sm font-semibold text-white transition hover:bg-[#1ebe5b] sm:w-auto"
+          >
+            <WhatsAppIcon className="h-4 w-4" />
+            WhatsApp Us
           </a>
         </div>
       </div>

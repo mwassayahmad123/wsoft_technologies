@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { blogPosts } from "@/data/content";
+import { blogPosts, contactInfo, type BlogBlock } from "@/data/content";
+import { PhoneIcon, WhatsAppIcon } from "@/components/ContactIcons";
 
 function formatDate(dateStr: string) {
   return new Date(dateStr).toLocaleDateString("en-US", {
@@ -9,6 +11,37 @@ function formatDate(dateStr: string) {
     month: "long",
     day: "numeric",
   });
+}
+
+function renderBlock(block: BlogBlock, i: number) {
+  if (typeof block === "string") {
+    return (
+      <p key={i} className="text-base leading-relaxed text-slate-700">
+        {block}
+      </p>
+    );
+  }
+  if ("h2" in block) {
+    return (
+      <h2 key={i} className="pt-6 text-2xl font-bold tracking-tight text-slate-900">
+        {block.h2}
+      </h2>
+    );
+  }
+  if ("h3" in block) {
+    return (
+      <h3 key={i} className="pt-3 text-lg font-semibold text-slate-900">
+        {block.h3}
+      </h3>
+    );
+  }
+  return (
+    <ul key={i} className="list-disc space-y-2 pl-6 text-base leading-relaxed text-slate-700 marker:text-sky-500">
+      {block.list.map((item) => (
+        <li key={item}>{item}</li>
+      ))}
+    </ul>
+  );
 }
 
 export function generateStaticParams() {
@@ -24,8 +57,9 @@ export async function generateMetadata({
   const post = blogPosts.find((p) => p.slug === slug);
   if (!post) return {};
   return {
-    title: `${post.title} | Wsoft Technologies Blog`,
+    title: post.seoTitle ?? `${post.title} | Wsoft Technologies Blog`,
     description: post.excerpt,
+    openGraph: post.image ? { images: [post.image] } : undefined,
   };
 }
 
@@ -61,12 +95,45 @@ export default async function BlogPostPage({
           {post.title}
         </h1>
 
-        <div className="mt-8 space-y-5">
-          {post.content.map((paragraph, i) => (
-            <p key={i} className="text-base leading-relaxed text-slate-700">
-              {paragraph}
-            </p>
-          ))}
+        {post.image && (
+          <Image
+            src={post.image}
+            alt={post.title}
+            width={1670}
+            height={941}
+            priority
+            sizes="(min-width: 768px) 768px, 100vw"
+            className="mt-8 w-full rounded-2xl border border-slate-200"
+          />
+        )}
+
+        <div className="mt-8 space-y-5">{post.content.map(renderBlock)}</div>
+
+        <div className="mt-14 rounded-2xl border border-sky-100 bg-sky-50 p-6 text-center sm:p-8">
+          <h2 className="text-xl font-bold text-slate-900">
+            Have a project in mind?
+          </h2>
+          <p className="mt-2 text-sm text-slate-600">
+            Talk to the Wsoft Technologies team by phone or WhatsApp.
+          </p>
+          <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <a
+              href={contactInfo.phoneHref}
+              className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-sky-600 sm:w-auto"
+            >
+              <PhoneIcon className="h-4 w-4" />
+              Call {contactInfo.phoneDisplay}
+            </a>
+            <a
+              href={contactInfo.whatsappHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#25D366] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#1ebe5b] sm:w-auto"
+            >
+              <WhatsAppIcon className="h-4 w-4" />
+              WhatsApp Us
+            </a>
+          </div>
         </div>
       </div>
     </article>

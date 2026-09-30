@@ -28,7 +28,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${inter.variable} ${poppins.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col font-sans">
+      {/* Browser extensions (e.g. ColorZilla) inject attributes on <body> before hydration. */}
+      <body className="min-h-full flex flex-col font-sans" suppressHydrationWarning>
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />

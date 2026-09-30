@@ -54,10 +54,10 @@ export default function BlogPage() {
               >
                 {post.image && (
                   <Image
-                    src={post.image}
+                    src={post.image.src}
                     alt={post.title}
-                    width={1670}
-                    height={941}
+                    width={post.image.width}
+                    height={post.image.height}
                     sizes="(min-width: 768px) 480px, 100vw"
                     className="aspect-[16/9] w-full border-b border-slate-200 object-cover"
                   />

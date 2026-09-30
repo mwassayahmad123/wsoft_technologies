@@ -13,11 +13,28 @@ function formatDate(dateStr: string) {
   });
 }
 
+// Turns inline [text](href) markers into links.
+function renderInline(text: string) {
+  return text.split(/(\[[^\]]+\]\([^)]+\))/g).map((part, i) => {
+    const match = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+    if (!match) return part;
+    return (
+      <Link
+        key={i}
+        href={match[2]}
+        className="font-semibold text-blue-600 underline decoration-blue-300 decoration-2 underline-offset-4 transition-colors hover:text-blue-800 hover:decoration-blue-600"
+      >
+        {match[1]}
+      </Link>
+    );
+  });
+}
+
 function renderBlock(block: BlogBlock, i: number) {
   if (typeof block === "string") {
     return (
       <p key={i} className="text-base leading-relaxed text-slate-700">
-        {block}
+        {renderInline(block)}
       </p>
     );
   }
@@ -59,7 +76,7 @@ export async function generateMetadata({
   return {
     title: post.seoTitle ?? `${post.title} | Wsoft Technologies Blog`,
     description: post.excerpt,
-    openGraph: post.image ? { images: [post.image] } : undefined,
+    openGraph: post.image ? { images: [post.image.src] } : undefined,
   };
 }
 
@@ -97,10 +114,10 @@ export default async function BlogPostPage({
 
         {post.image && (
           <Image
-            src={post.image}
+            src={post.image.src}
             alt={post.title}
-            width={1670}
-            height={941}
+            width={post.image.width}
+            height={post.image.height}
             priority
             sizes="(min-width: 768px) 768px, 100vw"
             className="mt-8 w-full rounded-2xl border border-slate-200"

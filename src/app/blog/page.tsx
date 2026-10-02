@@ -55,7 +55,7 @@ export default function BlogPage() {
                 {post.image && (
                   <Image
                     src={post.image.src}
-                    alt={post.title}
+                    alt={post.image.alt ?? post.title}
                     width={post.image.width}
                     height={post.image.height}
                     sizes="(min-width: 768px) 480px, 100vw"

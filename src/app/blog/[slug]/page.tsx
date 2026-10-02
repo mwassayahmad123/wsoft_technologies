@@ -115,7 +115,7 @@ export default async function BlogPostPage({
         {post.image && (
           <Image
             src={post.image.src}
-            alt={post.title}
+            alt={post.image.alt ?? post.title}
             width={post.image.width}
             height={post.image.height}
             priority

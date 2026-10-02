@@ -55,6 +55,31 @@ body {
   }
 }
 
+@keyframes blog-ticker {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.blog-ticker-track {
+  animation: blog-ticker 45s linear infinite;
+}
+
+.blog-ticker:hover .blog-ticker-track,
+.blog-ticker:focus-within .blog-ticker-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blog-ticker {
+    overflow-x: auto;
+  }
+
+  .blog-ticker-track {
+    animation: none;
+  }
+}
+
 @keyframes fade-up {
   from {
     opacity: 0;

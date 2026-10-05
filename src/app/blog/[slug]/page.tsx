@@ -13,9 +13,17 @@ function formatDate(dateStr: string) {
   });
 }
 
-// Turns inline [text](href) markers into links.
+// Turns inline [text](href) markers into links and **text** into bold.
 function renderInline(text: string) {
-  return text.split(/(\[[^\]]+\]\([^)]+\))/g).map((part, i) => {
+  return text.split(/(\[[^\]]+\]\([^)]+\)|\*\*[^*]+\*\*)/g).map((part, i) => {
+    const bold = part.match(/^\*\*([^*]+)\*\*$/);
+    if (bold) {
+      return (
+        <strong key={i} className="font-semibold text-slate-900">
+          {bold[1]}
+        </strong>
+      );
+    }
     const match = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
     if (!match) return part;
     return (
@@ -55,7 +63,7 @@ function renderBlock(block: BlogBlock, i: number) {
   return (
     <ul key={i} className="list-disc space-y-2 pl-6 text-base leading-relaxed text-slate-700 marker:text-sky-500">
       {block.list.map((item) => (
-        <li key={item}>{item}</li>
+        <li key={item}>{renderInline(item)}</li>
       ))}
     </ul>
   );

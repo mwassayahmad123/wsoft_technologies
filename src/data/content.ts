@@ -182,11 +182,21 @@ export const team = [
     image: "/team/zoha.jpeg",
   },
   {
-    name: "Samra",
-    role: "Social Media Manager",
-    image: "#",
+    name: "Namra Nazar",
+    role: "Social Media Marketing Intern",
+    image: "/team/namra.jpg",
   },
-  
+  {
+    name: "Hazeefa Safdar",
+    role: "Social Media Marketing Intern",
+    image: "/team/hazeefa.jpg",
+  },
+  {
+    name: "Iqra Irfan",
+    role: "Social Media Marketing Intern",
+    image: "/team/iqra.jpg",
+  },
+
   {
     name: "Muhammad Rehan",
     role: "Game Developer",

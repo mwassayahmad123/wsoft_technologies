@@ -25,6 +25,7 @@ export default function Team() {
               name={member.name}
               role={member.role}
               image={member.image}
+              linkedin={"linkedin" in member ? member.linkedin : undefined}
             />
           ))}
         </div>

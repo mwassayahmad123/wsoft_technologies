@@ -165,53 +165,69 @@ export const team = [
     name: "Wassay Ahmad Qureshi",
     role: "Founder & CEO",
     image: "/team/wassay.png",
+    linkedin: "https://www.linkedin.com/in/wassay-ahmad-qureshi-a3568a248/",
   },
   {
     name: "Hassan Rasool",
     role: "Full-Stack Developer | Automation Enthusiast",
     image: "/team/hassan.jpeg",
+    linkedin: "https://www.linkedin.com/in/hassan-rasool-163086244/",
   },
   {
     name: "Talha Khan",
     role: "AI Engineer",
     image: "/team/talha.png",
+    linkedin: "https://www.linkedin.com/in/talha-khan-5a94801bb/",
   },
   {
     name: "Zoha Riaz Qureshi",
     role: "Human Resource | People & Culture Specialist",
     image: "/team/zoha.jpeg",
+    linkedin: "https://www.linkedin.com/in/zoha-riaz-qureshi-chrp-618762180/",
   },
   {
-    name: "Namra Nazar",
-    role: "Social Media Marketing Intern",
-    image: "/team/namra.jpg",
+    name: "Muhammad Hussnain",
+    role: "SEO Executive",
+    image: "/team/husnain.png",
+    linkedin: "https://www.linkedin.com/in/muhammad-hussnain-seo/",
   },
-  {
-    name: "Hazeefa Safdar",
-    role: "Social Media Marketing Intern",
-    image: "/team/hazeefa.jpg",
-  },
-  {
-    name: "Iqra Irfan",
-    role: "Social Media Marketing Intern",
-    image: "/team/iqra.jpg",
-  },
-
+  
   {
     name: "Muhammad Rehan",
     role: "Game Developer",
     image: "/team/rayyan.png",
   },
   {
+    name: "Sadaf Javed Awan",
+    role: "Project Manager",
+    image: "/team/sadaf.png",
+    linkedin: "https://www.linkedin.com/in/sadaf-javed-awan-77077b248/",
+  },
+  {
     name: "Areesha Amin",
     role: "Social Media Manager",
     image: "/team/Areesha.png",
+    linkedin: "https://www.linkedin.com/in/areesha-amin-0a6519346/",
+  },
+ 
+  {
+    name: "Namra Nazar",
+    role: "Social Media Marketing Intern",
+    image: "/team/namra.png",
+    linkedin: "https://www.linkedin.com/in/namra-nazar-marketer/",
   },
   {
-    name: "Sadaf Javed Awan",
-    role: "Social Media Manager",
-    image: "/team/sadaf.png",
+    name: "Hazeefa Safdar",
+    role: "Social Media Marketing Intern",
+    image: "/team/hazeefa.png",
   },
+  {
+    name: "Iqra Irfan",
+    role: "Social Media Marketing Intern",
+    image: "/team/iqra.png",
+    linkedin: "https://www.linkedin.com/in/iqra-irfan-92250a200/",
+  },
+
   {
     name: "Tayyab Zafar",
     role: "SEO Intern",
@@ -221,6 +237,7 @@ export const team = [
     name: "Izza Yousaf",
     role: "SEO Intern",
     image: "/team/izza.jpg",
+    linkedin: "https://www.linkedin.com/in/izza-yousaf/",
   },
   {
     name: "Alamdar Abbas",

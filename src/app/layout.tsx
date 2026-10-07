@@ -20,6 +20,9 @@ export const metadata: Metadata = {
   title: "Wsoft Technologies | Software & AI Engineering Partner",
   description:
     "Wsoft Technologies builds custom software, AI agents, and scalable platforms for startups and growing businesses.",
+  verification: {
+    google: "2C_sURjw9X2rc7JftI2He9vvIMNb9T3BEC0v6JcMy84",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

@@ -220,6 +220,7 @@ export const team = [
     name: "Hazeefa Safdar",
     role: "Social Media Marketing Intern",
     image: "/team/hazeefa.png",
+    linkedin: "https://www.linkedin.com/in/hazeefa-safdar-2615ba315/",
   },
   {
     name: "Iqra Irfan",
@@ -243,6 +244,7 @@ export const team = [
     name: "Alamdar Abbas",
     role: "SEO Intern",
     image: "/team/alamdar.jpeg",
+    linkedin: "https://www.linkedin.com/in/alamdar-abbas-sargani-b32b6a378/",
   },
 ];
 

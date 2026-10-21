@@ -60,6 +60,37 @@ function renderBlock(block: BlogBlock, i: number) {
       </h3>
     );
   }
+  if ("table" in block) {
+    return (
+      <div key={i} className="overflow-x-auto rounded-xl border border-slate-200">
+        <table className="w-full min-w-[560px] text-left text-sm text-slate-700">
+          <thead className="bg-slate-900 text-white">
+            <tr>
+              {block.table.head.map((cell) => (
+                <th key={cell} className="px-4 py-3 font-semibold">
+                  {cell}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-slate-200">
+            {block.table.rows.map((row) => (
+              <tr key={row[0]} className="even:bg-slate-50">
+                {row.map((cell, c) => (
+                  <td
+                    key={c}
+                    className={`px-4 py-3 align-top ${c === 0 ? "font-semibold text-slate-900" : ""}`}
+                  >
+                    {renderInline(cell)}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    );
+  }
   return (
     <ul key={i} className="list-disc space-y-2 pl-6 text-base leading-relaxed text-slate-700 marker:text-sky-500">
       {block.list.map((item) => (

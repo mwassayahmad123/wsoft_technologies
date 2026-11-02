@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   description:
     "Wsoft Technologies builds custom software, AI agents, and scalable platforms for startups and growing businesses.",
   verification: {
-    google: "2C_sURjw9X2rc7JftI2He9vvIMNb9T3BEC0v6JcMy84",
+    google: ["2C_sURjw9X2rc7JftI2He9vvIMNb9T3BEC0v6JcMy84", "googleec86f00e0c341639"],
   },
 };
 

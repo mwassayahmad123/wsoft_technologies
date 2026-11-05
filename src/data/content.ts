@@ -203,12 +203,6 @@ export const team = [
     image: "/team/sadaf.png",
     linkedin: "https://www.linkedin.com/in/sadaf-javed-awan-77077b248/",
   },
-  {
-    name: "Areesha Amin",
-    role: "Social Media Manager",
-    image: "/team/Areesha.png",
-    linkedin: "https://www.linkedin.com/in/areesha-amin-0a6519346/",
-  },
  
   {
     name: "Namra Nazar",

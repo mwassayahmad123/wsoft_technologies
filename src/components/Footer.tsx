@@ -29,6 +29,9 @@ export default function Footer() {
         <div className="mt-10 flex flex-col gap-2 border-t border-white/10 pt-6 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
           <p>Copyright &copy; {new Date().getFullYear()} WSOFT Technologies Pvt Ltd.</p>
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
+            <a href="/verify" className="hover:text-slate-300">
+              Verify Certificate
+            </a>
             <a href={`mailto:${contactInfo.email}`} className="hover:text-slate-300">
               {contactInfo.email}
             </a>

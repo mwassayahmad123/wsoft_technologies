@@ -44,7 +44,8 @@ async function writeFileStore(data: Record<string, Certificate>) {
 
 async function blobStore() {
   const { getStore } = await import("@netlify/blobs");
-  return getStore({ name: "internship-certificates", consistency: "strong" });
+  // Default (eventual) consistency: "strong" needs an uncachedEdgeURL that the Next.js runtime doesn't always provide.
+  return getStore("internship-certificates");
 }
 
 export async function getCertificate(id: string): Promise<Certificate | null> {
